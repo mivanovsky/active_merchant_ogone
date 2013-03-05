@@ -58,6 +58,15 @@ module ActiveMerchant #:nodoc:
             add_field('ECOM_SHIPTO_DOB', mapping[:ship_dob])
           end
 
+          def three_d_secure(mapping = {})
+            add_field('FLAG3DS', 'Y')
+            if mapping[:window]
+              add_field('WIND3DS', 'POPUP')
+            else
+              add_field('WIND3DS', 'MAINW')
+            end
+          end
+
           def operation operation
             op = case operation
             when :authorization, :auth; 'RES'

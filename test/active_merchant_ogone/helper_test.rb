@@ -57,6 +57,17 @@ class OgoneHelperTest < Test::Unit::TestCase
     assert_field 'ECOM_SHIPTO_DOB', '23/04/1987' 
   end
 
+  def test_three_d_secure_fields
+    @helper.three_d_secure
+    assert_field 'FLAG3DS', 'Y'
+    assert_field 'WIND3DS', 'MAINW'
+  end
+
+  def test_three_d_secure_fields_window
+    @helper.three_d_secure window: true
+    assert_field 'WIND3DS', 'POPUP'
+  end
+
   def test_operation
     @helper.operation :payment
     assert_field 'operation', 'SAL'
