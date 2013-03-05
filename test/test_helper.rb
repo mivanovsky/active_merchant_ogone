@@ -4,7 +4,7 @@ $:.unshift(File.dirname(__FILE__) + '/../lib')
 require 'rubygems'
 
 begin
-  gem 'actionpack', '2.3.11'
+  gem 'actionpack', '>= 2.3.11'
 rescue LoadError
   raise StandardError, "The view tests need ActionPack installed as gem to run"
 end
@@ -12,7 +12,6 @@ end
 require 'active_merchant'
 require 'money'
 require 'test/unit'
-require 'mocha'
 require 'yaml'
 
 #require 'action_dispatch'
