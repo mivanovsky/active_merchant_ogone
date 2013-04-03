@@ -59,7 +59,6 @@ module ActiveMerchant #:nodoc:
           end
 
           def three_d_secure(mapping = {})
-            add_field('FLAG3DS', 'Y')
             if mapping[:window]
               add_field('WIN3DS', 'POPUP')
             else
