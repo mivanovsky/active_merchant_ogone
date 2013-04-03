@@ -60,12 +60,12 @@ class OgoneHelperTest < Test::Unit::TestCase
   def test_three_d_secure_fields
     @helper.three_d_secure
     assert_field 'FLAG3DS', 'Y'
-    assert_field 'WIND3DS', 'MAINW'
+    assert_field 'WIN3DS', 'MAINW'
   end
 
   def test_three_d_secure_fields_window
     @helper.three_d_secure window: true
-    assert_field 'WIND3DS', 'POPUP'
+    assert_field 'WIN3DS', 'POPUP'
   end
 
   def test_operation
