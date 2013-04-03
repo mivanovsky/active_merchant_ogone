@@ -59,6 +59,7 @@ class OgoneHelperTest < Test::Unit::TestCase
 
   def test_three_d_secure_fields
     @helper.three_d_secure
+    assert_field 'FLAG3D', 'Y'
     assert_field 'WIN3DS', 'MAINW'
   end
 
